@@ -70,14 +70,37 @@ function StartGame() {
       placedLetters.removeChild(placedLetters.firstChild);
   }
 
-  let wordPos = Math.floor(Math.random() * dictionary.length);
-  word = dictionary[wordPos];
-  console.log(word);
+
+  word = GetRandomWord();
+  // let wordPos = Math.floor(Math.random() * dictionary.length);
+  // word = dictionary[wordPos];
+  // console.log(word);
 
   SetupPlacedLetters();
   SetupGameProgress();
 
 }
+
+
+function GetRandomWord() {
+    fetch('localhost:5000/randomWord')
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error('Network response was not OK');
+    }
+    console.log("response: " + response);
+    response.text.then(function (text) {
+      console.log(text);
+      word = text;
+    });
+  })
+  .catch((error) => {
+    console.error('There has been a problem with your fetch operation:', error);
+  });
+}
+
+
+
 
 
 
@@ -97,9 +120,6 @@ tile.disabled = false;
 tile.classList.remove("selected-letters");
 }
   }
-
-
-
 
 }
 

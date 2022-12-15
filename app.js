@@ -66,6 +66,9 @@ LoadTiles();
 //Get random word from dictionary
 async function StartGame() {
 
+
+
+
     while(placedLetters.hasChildNodes()) {
       placedLetters.removeChild(placedLetters.firstChild);
   }
@@ -93,11 +96,14 @@ async function GetRandomWord() {
     if (!response.ok) {
       throw new Error('Network response was not OK');
     }
-    console.log("response: " + response);
-    response.text.then(function (text) {
-      console.log(text);
-      word = text;
-    });
+    console.log("response: " + response.body);
+
+    word = response.text();
+
+    // response.text.then(function (text) {
+    //   console.log(text);
+    //   word = text;
+    // });
   })
   .catch((error) => {
     console.error('There has been a problem with your fetch operation:', error);

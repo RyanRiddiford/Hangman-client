@@ -71,7 +71,9 @@ async function StartGame() {
   }
 
 
-  word = await GetRandomWord().then(() => {
+  await GetRandomWord().then((data) => {
+    console.log(data);
+    word = data;
   // let wordPos = Math.floor(Math.random() * dictionary.length);
   // word = dictionary[wordPos];
   // console.log(word);

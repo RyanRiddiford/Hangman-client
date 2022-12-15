@@ -71,13 +71,16 @@ async function StartGame() {
   }
 
 
-  word = await GetRandomWord();
+  word = await GetRandomWord().then(() => {
   // let wordPos = Math.floor(Math.random() * dictionary.length);
   // word = dictionary[wordPos];
   // console.log(word);
 
   SetupPlacedLetters();
   SetupGameProgress();
+
+  });
+
 
 }
 

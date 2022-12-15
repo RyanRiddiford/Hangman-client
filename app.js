@@ -64,14 +64,14 @@ LoadTiles();
 
 
 //Get random word from dictionary
-function StartGame() {
+async function StartGame() {
 
     while(placedLetters.hasChildNodes()) {
       placedLetters.removeChild(placedLetters.firstChild);
   }
 
 
-  word = GetRandomWord();
+  word = await GetRandomWord();
   // let wordPos = Math.floor(Math.random() * dictionary.length);
   // word = dictionary[wordPos];
   // console.log(word);
@@ -82,7 +82,7 @@ function StartGame() {
 }
 
 
-function GetRandomWord() {
+async function GetRandomWord() {
     fetch('localhost:5000/randomWord')
   .then((response) => {
     if (!response.ok) {

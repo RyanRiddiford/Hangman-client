@@ -1,0 +1,205 @@
+/*
+Author: Ryan Riddiford
+
+CSS stylesheet for Hangman
+*/
+
+html {
+    width: 100vw;
+    background-color: #F7F8FC;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    button {
+        border: none;
+        background: transparent;
+        margin:0;
+        padding:0;
+    }
+
+body:not(header) {
+display:flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap:100px;
+margin-bottom:200px;
+}
+    
+    /* button {
+        border: none;
+        background: transparent;
+        margin:0;
+        padding:0;
+    } */
+    
+    h1 {
+    font-size: 40px;
+    }
+    
+    h2 {
+        font-size: 30px;
+        border-bottom: 4px solid #000000;
+        width: 100%;
+        text-align: center;
+    }
+    
+    h4 {
+        color:#F7F8FC;
+        font-size: 28px;
+        font-weight: 800;
+        margin: 20px;
+        padding: 0;
+    }
+    
+    header { 
+        color:#FFFFFF;
+        background-color: #dcae71;
+        display:flex; 
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width:100%;
+        text-align: center;
+        border-bottom: 1px solid black;
+    }
+
+
+
+    #available-letters {
+        display:grid;
+        grid-template-columns: repeat(10, 80px);
+        grid-template-rows: 80px;
+        /* width:500px; */
+        gap:30px;
+        padding:20px;
+        text-align: center;
+        border:5px solid black;
+        background-color: #575855;
+        border-radius: 20px;
+    }
+
+    .tile {
+        height:70px;
+        width:70px;
+        border: 2px solid #101010;
+        border-radius: 15px;
+        background-color: #F7F8FC;
+        font-size: 30px;
+        font-weight: 800;
+        transition: 0.2s ease-in-out;
+
+    }
+
+    .tile:hover:not(.selected-letters) {
+        filter:brightness(50%);
+        z-index: 2;
+        transform: scale(1.5);
+        /* transition: 0.2s ease-in-out; */
+    }
+
+    #start-btn {
+        width:180px; 
+       padding:10px;
+       font-size: 18px;
+       font-weight: 900;
+       border-radius: 10px;
+       transition: 0.2s ease-in-out;
+   }
+   
+   #start-btn:hover:not([disabled]) {
+       border-radius: 30px;
+       background-color: #d3d3d3;
+       color:#000000;
+   }
+
+    /* .tile:not(hover) {
+                filter:brightness(50%);
+        transition: 0.2s ease-in-out;
+    } */
+
+
+    #top {
+        display:flex;
+        flex-direction: row;
+        width:80vw;
+        height:50vh;
+justify-content: space-between;
+
+
+    }
+
+    #bottom {
+        display:flex;
+        flex-direction: column;
+align-items: center;
+        width:80vw;
+        gap:50px;
+    }
+
+    .button-on {
+        background-color: #1e1e1e; 
+         color:#F7F8FC;
+ }
+ 
+ .button-off {
+            border: 2px solid #1e1e1e; 
+             color:#1e1e1e;
+ }
+
+
+    #hangman-img-container {
+        width:40%;
+
+        border:5px solid black;
+        background-color: #575855;
+        display:flex;
+        flex-direction: column;
+align-items: center;
+text-align: center;
+justify-content: center;
+
+border-radius: 30px;
+
+}
+
+
+#attempt {
+    font-size: 200px;
+}
+
+
+    #placed-letters {
+
+        display:flex;
+        flex-direction: row;
+        width:50%;
+
+        align-items: center;
+        justify-content: center;     
+                           border:5px solid black;
+        background-color: #575855;
+        border-radius: 30px;
+    }
+
+    .selected-letters {
+        border: 5px solid gray;
+        background-color: white;
+    }
+
+    .letter-placement {
+        border-bottom: 10px solid black;
+        text-align: center;
+        height: 100px;
+        width:100px;
+        margin:10px;
+        font-size:60px;
+        font-weight: 900;
+        
+    }

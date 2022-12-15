@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+      <header>
+        <h1>Hangman</h1>
+    </header>
+
+
+
+        <div id="top">
+<div id="hangman-img-container">
+<h3 id="attempt">0</h3>
+</div>
+<div id="placed-letters">
+
+</div>
+        </div>
+
+        <div id="bottom">
+          <div id="controls">
+            <button id="start-btn" class="button-on" onclick="StartGame()">New Game</button>
+          </div>  
+          <div id="available-letters">
+            </div>
+
+
+        </div>
+        
+        <script src="app.js" async defer></script>
+        
+    </body>
+</html>
+<!--  -->
+
+
+
+<!-- <!DOCTYPE HTML>
+<html>
+<head>
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+<body>
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+<img id="drag1" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="336" height="69">
+
+</body>
+</html> -->

@@ -88,7 +88,7 @@ async function StartGame() {
 
 
 async function GetRandomWord() {
-    fetch('localhost:5000/randomWord')
+    fetch('http://localhost:5000/randomWord')
   .then((response) => {
     if (!response.ok) {
       throw new Error('Network response was not OK');
